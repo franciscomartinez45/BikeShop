@@ -1,9 +1,9 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-public class CipherCareLoginGUI{
+public class BikeShopLoginGUI{
 
-    public CipherCareLoginGUI() {
+    public BikeShopLoginGUI() {
         JFrame frame = new JFrame("Database Login");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
@@ -35,13 +35,13 @@ public class CipherCareLoginGUI{
 
         loginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                boolean isValid = CipherCareSQL.testConnection(usernameField.getText(), passwordField.getPassword());
+                boolean isValid = BikeShopSQL.testConnection(usernameField.getText(), passwordField.getPassword());
                 if(isValid){
                     String password = "";
                     for(char c: passwordField.getPassword()){
                         password += c;
                     }
-                    new CipherCareMainGUI(usernameField.getText(), password);
+                    new BikeShopMainGUI(usernameField.getText(), password);
                     frame.dispose();
                 }
                 else{
